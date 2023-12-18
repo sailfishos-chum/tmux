@@ -1,0 +1,95 @@
+Name: tmux
+Summary: A Terminal Multiplexer
+Version: 3.3a
+Release: 0
+Group: Applications
+License: ASL 2.0
+URL: https://github.com/tmux/tmux
+SCM: https://github.com/tmux/tmux
+Sources:
+    - '%{name}-%{version}.tar.gz'
+    # https://github.com/imomaliev/tmux-bash-completion
+    - 'homebrew_%{bcversion}.tar.gz'
+Description: |
+    %{summary}.
+
+    It enables a number of terminals to be created, accessed, and controlled
+    from a single screen. tmux may be detached from a screen and continue
+    running in the background, then later reattached.
+
+    %if "%{?vendor}" == "chum"
+    Title: tmux
+    Type: console-application
+    PackagedBy: nephros
+    Categories:
+      - TerminalEmulator
+      - Utility
+    Custom:
+      Repo: %{url}
+      PackagingRepo: https://github.com/sailfishos-chum/tmux
+    PackageIcon: https://raw.githubusercontent.com/tmux/tmux/master/logo/tmux-logomark.svg
+    Links:
+      Homepage: %{url}
+      Help: %{url}/discussions
+      Bugtracker: %{url}/issues
+      Donation: https://openrepos.net/donate
+    %endif
+
+SetupOptions: -a 1 -q -n %{name}-%{version}/upstream
+RpmLintIgnore:
+  - 'summary-too-long'
+  - 'no-changelogname-tag'
+  - 'invalid-url'
+Macros:
+  - 'bcversion;1.0.0'
+#Patches:
+#  - 'baz'
+#Requires:
+PkgBR:
+  - autoconf
+  - automake
+  - make
+  - pkgconfig
+  - libutempter-devel
+PkgConfigBR:
+  - libevent
+  - ncurses
+  - ncursesw
+  - tinfo
+  - systemd
+Configure: autogen
+ConfigOptions:
+  - '--enable-systemd'
+  - '--enable-utempter'
+#Builder: make
+Files:
+  - '%license COPYING'
+  - '%{_bindir}/*'
+
+SubPackages:
+    - Name:  bash-completion
+      AutoDepend: false
+      Summary: Shell completions for %{name}
+      Group: Applications
+      License: GPLv2
+      Description: |
+          %if "%{?vendor}" == "chum"
+          Title: Shell completions for %{name}
+          Type: addon
+          PackagedBy: nephros
+          Categories:
+            - Files
+          Custom:
+            Repo: %{url}
+          PackageIcon: https://raw.githubusercontent.com/tmux/tmux/master/logo/tmux-logomark.svg
+          Links:
+            Homepage: %{url}
+            Help: %{url}/discussions
+            Bugtracker: %{url}/issues
+            Donation: https://openrepos.net/donate
+          %endif
+
+      Requires:
+        - gnu-bash
+      Files:
+        - '%{_datadir}/bash-completion/completions/%{name}'
