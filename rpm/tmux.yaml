@@ -3,7 +3,7 @@ Summary: A Terminal Multiplexer
 Version: 3.3a
 Release: 0
 Group: Applications
-License: ASL 2.0
+License: ISC
 URL: https://github.com/tmux/tmux
 SCM: https://github.com/tmux/tmux
 Sources:

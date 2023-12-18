@@ -13,7 +13,7 @@ Summary:    A Terminal Multiplexer
 Version:    3.3a
 Release:    0
 Group:      Applications
-License:    ASL 2.0
+License:    ISC
 URL:        https://github.com/tmux/tmux
 Source0:    %{name}-%{version}.tar.gz
 Source1:    homebrew_%{bcversion}.tar.gz
