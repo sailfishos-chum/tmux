@@ -28,6 +28,7 @@ BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  make
 BuildRequires:  pkgconfig
+BuildRequires:  bison
 BuildRequires:  libutempter-devel
 
 %description
@@ -71,6 +72,7 @@ Categories:
   - Files
 Custom:
   Repo: %{url}
+  PackagingRepo: https://github.com/sailfishos-chum/tmux
 PackageIcon: https://raw.githubusercontent.com/tmux/tmux/master/logo/tmux-logomark.svg
 Links:
   Homepage: %{url}

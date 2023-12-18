@@ -50,6 +50,7 @@ PkgBR:
   - automake
   - make
   - pkgconfig
+  - bison
   - libutempter-devel
 PkgConfigBR:
   - libevent
@@ -81,6 +82,7 @@ SubPackages:
             - Files
           Custom:
             Repo: %{url}
+            PackagingRepo: https://github.com/sailfishos-chum/tmux
           PackageIcon: https://raw.githubusercontent.com/tmux/tmux/master/logo/tmux-logomark.svg
           Links:
             Homepage: %{url}
