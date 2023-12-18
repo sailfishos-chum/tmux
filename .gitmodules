@@ -1,3 +1,6 @@
 [submodule "upstream"]
 	path = upstream
 	url = https://github.com/tmux/tmux
+[submodule "tmux-bash-completion"]
+	path = tmux-bash-completion
+	url = https://github.com/imomaliev/tmux-bash-completion
