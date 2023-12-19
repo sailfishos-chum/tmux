@@ -108,9 +108,12 @@ rm -rf %{buildroot}
 %make_install
 
 # >> install post
+# under tar_git, both submodules are in the tarball:
 pushd %{_builddir}/%{name}-%{version}/tmux-bash-completion/
 install -d %{buildroot}%{_datadir}/bash-completion/completions/
 install -m644 completions/tmux %{buildroot}%{_datadir}/bash-completion/completions/
+# fix rpmlint warning, remove (s)hebang:
+sed -i '/^#!/d' %{buildroot}%{_datadir}/bash-completion/completions/tmux
 rm -rf %{buildroot}%{_docdir}
 rm -rf %{buildroot}%{_mandir}
 # << install post

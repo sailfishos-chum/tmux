@@ -38,6 +38,7 @@ Description: |
 SetupOptions: -q -n %{name}-%{version}/upstream
 RpmLintIgnore:
   - 'summary-too-long'
+  - 'description-line-too-long'
   - 'no-changelogname-tag'
   - 'invalid-url'
 Macros:
