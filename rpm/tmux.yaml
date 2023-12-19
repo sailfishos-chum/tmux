@@ -9,7 +9,7 @@ SCM: https://github.com/tmux/tmux
 Sources:
     - '%{name}-%{version}.tar.gz'
     # https://github.com/imomaliev/tmux-bash-completion
-    - 'homebrew_%{bcversion}.tar.gz'
+    # 'homebrew_%{bcversion}.tar.gz'
 Description: |
     %{summary}.
 
@@ -35,9 +35,10 @@ Description: |
       Donation: https://openrepos.net/donate
     %endif
 
-SetupOptions: -a 1 -q -n %{name}-%{version}/upstream
+SetupOptions: -q -n %{name}-%{version}/upstream
 RpmLintIgnore:
   - 'summary-too-long'
+  - 'description-line-too-long'
   - 'no-changelogname-tag'
   - 'invalid-url'
 Macros:
