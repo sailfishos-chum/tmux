@@ -52,17 +52,18 @@ PkgBR:
   - make
   - pkgconfig
   - bison
-  - libutempter-devel
+  # libutempter-devel
 PkgConfigBR:
   - libevent
   - ncurses
   - ncursesw
   - tinfo
   - systemd
+Builder: none # actually, make
 Configure: autogen
 ConfigOptions:
   - '--enable-systemd'
-  - '--enable-utempter'
+  - '--disable-utempter'
 #Builder: make
 Files:
   - '%license COPYING'
