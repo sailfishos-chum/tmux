@@ -108,7 +108,7 @@ rm -rf %{buildroot}
 %make_install
 
 # >> install post
-pushd %{_builddir}/tmux-bash-completion/
+pushd %{_builddir}/%{name}-%{version}/tmux-bash-completion/
 install -d %{buildroot}%{_datadir}/bash-completion/completions/
 install -m644 completions/tmux %{buildroot}%{_datadir}/bash-completion/completions/
 rm -rf %{buildroot}%{_docdir}
