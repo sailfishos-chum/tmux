@@ -16,7 +16,6 @@ Group:      Applications
 License:    ISC
 URL:        https://github.com/tmux/tmux
 Source0:    %{name}-%{version}.tar.gz
-Source1:    homebrew_%{bcversion}.tar.gz
 Source100:  tmux.yaml
 Source101:  tmux-rpmlintrc
 BuildRequires:  pkgconfig(libevent)
@@ -83,7 +82,7 @@ Links:
 
 
 %prep
-%setup -a 1 -q -n %{name}-%{version}/upstream
+%setup -q -n %{name}-%{version}/upstream
 
 # >> setup
 # << setup
@@ -109,8 +108,9 @@ rm -rf %{buildroot}
 %make_install
 
 # >> install post
+pushd %{builddir}/tmux-bash-completion/
 install -d %{buildroot}%{_datadir}/bash-completion/completions/
-install -m644 tmux-bash-completion-homebrew_%{bcversion}/completions/tmux %{buildroot}%{_datadir}/bash-completion/completions/
+install -m644 completions/tmux %{buildroot}%{_datadir}/bash-completion/completions/
 rm -rf %{buildroot}%{_docdir}
 rm -rf %{buildroot}%{_mandir}
 # << install post
