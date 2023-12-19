@@ -28,7 +28,6 @@ BuildRequires:  automake
 BuildRequires:  make
 BuildRequires:  pkgconfig
 BuildRequires:  bison
-BuildRequires:  libutempter-devel
 
 %description
 %{summary}.
@@ -94,18 +93,18 @@ Links:
 %autogen --disable-static
 %configure --disable-static \
     --enable-systemd \
-    --enable-utempter
+    --disable-utempter
 
-make %{?_smp_mflags}
 
 # >> build post
+%make_build
 # << build post
 
 %install
 rm -rf %{buildroot}
 # >> install pre
-# << install pre
 %make_install
+# << install pre
 
 # >> install post
 # under tar_git, both submodules are in the tarball:
