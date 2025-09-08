@@ -10,6 +10,8 @@ Sources:
     - '%{name}-%{version}.tar.gz'
     # https://github.com/imomaliev/tmux-bash-completion
     # 'homebrew_%{bcversion}.tar.gz'
+#Patches:
+#  - 'baz'
 Description: |
     %{summary}.
 
@@ -17,7 +19,7 @@ Description: |
     from a single screen. tmux may be detached from a screen and continue
     running in the background, then later reattached.
 
-    %if "%{?vendor}" == "chum"
+    %if 0%{?_chum}
     Title: tmux
     Type: console-application
     PackagedBy: nephros
@@ -43,8 +45,6 @@ RpmLintIgnore:
   - 'invalid-url'
 Macros:
   - 'bcversion;1.0.0'
-#Patches:
-#  - 'baz'
 #Requires:
 PkgBR:
   - autoconf
@@ -76,7 +76,7 @@ SubPackages:
       Group: Applications
       License: GPLv2
       Description: |
-          %if "%{?vendor}" == "chum"
+          %if 0%{?_chum}
           Title: Shell completions for %{name}
           Type: addon
           PackagedBy: nephros
