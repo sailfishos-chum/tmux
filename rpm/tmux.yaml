@@ -63,6 +63,7 @@ Builder: none # actually, make
 Configure: autogen
 ConfigOptions:
   - '--enable-systemd'
+  - '--disable-cgroups' # needs newer systemd? 252?
   - '--disable-utempter'
 #Builder: make
 Files:

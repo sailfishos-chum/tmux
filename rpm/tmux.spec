@@ -94,6 +94,7 @@ Links:
 %autogen --disable-static
 %configure --disable-static \
     --enable-systemd \
+    --disable-cgroups \
     --disable-utempter
 
 
