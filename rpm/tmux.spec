@@ -60,6 +60,7 @@ Summary:    Shell completions for %{name}
 License:    GPLv2
 Group:      Applications
 Requires:   gnu-bash
+Conflicts:  bash-completion > 2.16.0
 
 %description bash-completion
 %if 0%{?_chum}

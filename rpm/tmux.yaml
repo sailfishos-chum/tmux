@@ -93,6 +93,8 @@ SubPackages:
             Donation: https://openrepos.net/donate
           %endif
 
+      Conflicts: # packaged in https://github.com/scop/bash-completion/pull/1364
+        - bash-completion > 2.16.0
       Requires:
         - gnu-bash
       Files:
