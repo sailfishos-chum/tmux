@@ -17,7 +17,6 @@ URL:        https://github.com/tmux/tmux
 Source0:    %{name}-%{version}.tar.gz
 Source100:  tmux.yaml
 Source101:  tmux-rpmlintrc
-Patch0:     b6d0b4be30c73bae2c3777d6b4b22f1577a8c1aa.patch
 BuildRequires:  pkgconfig(libevent)
 BuildRequires:  pkgconfig(ncurses)
 BuildRequires:  pkgconfig(ncursesw)
@@ -84,8 +83,6 @@ Links:
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# b6d0b4be30c73bae2c3777d6b4b22f1577a8c1aa.patch
-%patch0 -p1
 # >> setup
 # << setup
 

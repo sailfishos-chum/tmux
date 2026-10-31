@@ -10,9 +10,6 @@ Sources:
     - '%{name}-%{version}.tar.gz'
     # https://github.com/imomaliev/tmux-bash-completion
     # 'homebrew_%{bcversion}.tar.gz'
-Patches:
-    # https://github.com/tmux/tmux/commit/b6d0b4be30c73bae2c3777d6b4b22f1577a8c1aa
-    - b6d0b4be30c73bae2c3777d6b4b22f1577a8c1aa.patch
 Description: |
     %{summary}.
 
